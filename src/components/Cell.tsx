@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 type Props = {
   value: string | number;
@@ -6,16 +6,19 @@ type Props = {
   onChange: (value: string) => void;
 };
 
-const Cell: React.FC<Props> = ({
+const Cell = ({
   value,
   raw,
   onChange,
-}) => {
+}: Props) => {
   const [editing, setEditing] = useState(false);
 
   const getClassName = () => {
     if (value === '#ERROR') return 'cell error';
-    if (value === '#CIRCULAR') return 'cell circular';
+
+    if (value === '#CIRCULAR') {
+      return 'cell circular';
+    }
 
     return 'cell';
   };
@@ -31,4 +34,4 @@ const Cell: React.FC<Props> = ({
   );
 };
 
-export default React.memo(Cell);
+export default Cell;

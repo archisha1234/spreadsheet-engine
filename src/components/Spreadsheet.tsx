@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Cell from './Cell';
 import type { GridState } from '../types/cell';
 import { ROWS, COLS, createCellId } from '../utils/constants';
